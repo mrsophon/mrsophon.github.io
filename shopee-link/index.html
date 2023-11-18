@@ -61,6 +61,9 @@
 								c = c.replace(".", "/");
 								url = a1+c;
 							}
+							if (url.includes("#")) {
+								url = url.split("#")[0];
+							}
 						} else  {
 							var a1 = text.substring(0, a[3]+1);
 							if (text.includes("?")) {
@@ -72,7 +75,7 @@
 							url = a1+c;
 						}
 
-						document.getElementById("result").innerHTML = "<a href="+url+"  target=\"_blank\"><span id=\"url\">"+url+"</span></a> &nbsp; <button onclick=\"copy()\">Copy text</button>";
+						document.getElementById("result").innerHTML = "<a href="+url+" target=\"_blank\"><span id=\"url\">"+url+"</span></a> &nbsp; <button onclick=\"copy()\">Copy text</button>";
 					}
 				}
 				document.getElementById("link").value = "";
